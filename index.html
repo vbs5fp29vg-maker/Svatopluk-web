@@ -7,19 +7,27 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-row">
+    <header class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content reveal">
         <div>
           <p class="eyebrow" data-i18n="eyebrow">Osobní web</p>
           <h1 data-i18n="name">Svatopluk Svoboda</h1>
           <p class="subtitle" data-i18n="subtitle">Šachista, IT analytik, datový expert</p>
+          <div class="badge-row">
+            <span class="badge" data-i18n="badge_im">Mezinárodní mistr</span>
+            <span class="badge" data-i18n="badge_champion">Mistr ČR 2018</span>
+            <span class="badge" data-i18n="badge_it">Digitální systémy</span>
+          </div>
         </div>
-        <button id="lang-toggle" class="lang-button" type="button">EN</button>
+        <button id="lang-toggle" class="lang-button" type="button" aria-label="Switch language">
+          EN
+        </button>
       </div>
     </header>
 
-    <main class="container main-grid">
-      <section class="card intro">
+    <main class="container main-layout">
+      <section class="card intro reveal">
         <div class="intro-layout">
           <figure class="profile-figure">
             <img
@@ -39,7 +47,22 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="stats reveal" aria-label="Highlights">
+        <article class="stat-card">
+          <p class="stat-value">1984</p>
+          <p class="stat-label" data-i18n="stat_born">Rok narození</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-value">IM</p>
+          <p class="stat-label" data-i18n="stat_title">Šachový titul</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-value">2018</p>
+          <p class="stat-label" data-i18n="stat_champion">Mistr ČR</p>
+        </article>
+      </section>
+
+      <section class="card reveal">
         <h2 data-i18n="it_title">Profesní dráha</h2>
         <ul>
           <li data-i18n="it_1">IT analytik se zaměřením na digitální aplikace</li>
@@ -49,7 +72,7 @@
         </ul>
       </section>
 
-      <section class="card">
+      <section class="card reveal">
         <h2 data-i18n="chess_title">Šachová dráha</h2>
         <ul>
           <li data-i18n="chess_1">Mezinárodní mistr v šachu</li>
@@ -58,24 +81,14 @@
         </ul>
       </section>
 
-      <section class="card">
+      <section class="card contact-card reveal">
         <h2 data-i18n="contact_title">Kontakt</h2>
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:svoboda.svato@gmail.com">svoboda.svato@gmail.com</a>
-        </p>
-        <p>
-          <strong>LinkedIn:</strong>
-          <a href="#" data-i18n="link_fill">doplnit odkaz</a>
-        </p>
-        <p>
-          <strong>GitHub:</strong>
-          <a href="#" data-i18n="link_fill">doplnit odkaz</a>
-        </p>
-        <p>
-          <strong>Instagram:</strong>
-          <a href="#" data-i18n="link_fill">doplnit odkaz</a>
-        </p>
+        <div class="contact-list">
+          <a class="contact-item" href="mailto:svoboda.svato@gmail.com">Email: svoboda.svato@gmail.com</a>
+          <a class="contact-item" href="#" data-i18n="link_linkedin">LinkedIn: doplnit odkaz</a>
+          <a class="contact-item" href="#" data-i18n="link_github">GitHub: doplnit odkaz</a>
+          <a class="contact-item" href="#" data-i18n="link_instagram">Instagram: doplnit odkaz</a>
+        </div>
       </section>
     </main>
 
