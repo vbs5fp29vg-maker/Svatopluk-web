@@ -1,0 +1,142 @@
+:root {
+  --bg: #f4fbff;
+  --surface: #ffffff;
+  --line: #cfe8f7;
+  --text: #0f172a;
+  --muted: #33556f;
+  --accent: #5db5ea;
+  --accent-strong: #1e88c7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% -10%, #d8effd 0, transparent 45%), var(--bg);
+}
+
+.container {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 2rem 0 1rem;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  color: var(--accent-strong);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.lang-button {
+  border: 1px solid var(--accent-strong);
+  background: white;
+  color: var(--accent-strong);
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.main-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 0.5rem 0 2rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+}
+
+.intro-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.profile-figure {
+  margin: 0;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 24px rgba(30, 136, 199, 0.16);
+  filter: brightness(1.03) contrast(1.05) saturate(1.06);
+}
+
+.profile-figure figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.2rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+li + li {
+  margin-top: 0.45rem;
+}
+
+a {
+  color: var(--accent-strong);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (min-width: 760px) {
+  .main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro {
+    grid-column: 1 / -1;
+  }
+
+  .intro-layout {
+    grid-template-columns: minmax(260px, 380px) 1fr;
+    align-items: center;
+  }
+}
