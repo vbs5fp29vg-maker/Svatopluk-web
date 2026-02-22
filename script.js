@@ -3,6 +3,10 @@ const copy = {
     eyebrow: "Osobní web",
     name: "Svatopluk Svoboda",
     subtitle: "Šachista, IT analytik, datový expert",
+    value_prop:
+      "Pomáhám týmům navrhovat a doručovat digitální produkty, které jsou stabilní, měřitelné a použitelné.",
+    cta_contact: "Kontaktovat mě",
+    cta_linkedin: "LinkedIn profil",
     badge_im: "Mezinárodní mistr",
     badge_champion: "Mistr ČR 2018",
     badge_it: "Digitální systémy",
@@ -13,6 +17,15 @@ const copy = {
     stat_born: "Rok narození",
     stat_title: "Šachový titul",
     stat_champion: "Mistr ČR",
+    projects_title: "Co umím dodat",
+    proj_1_title: "Analýza a návrh řešení",
+    proj_1_text:
+      "Převod business požadavků do jasné specifikace, backlogu a implementačního plánu.",
+    proj_2_title: "Datové toky a integrace",
+    proj_2_text:
+      "Návrh robustních integračních toků mezi systémy s důrazem na kvalitu dat a provozní stabilitu.",
+    proj_3_title: "Řízení komplexity",
+    proj_3_text: "Strukturované rozhodování v komplexním prostředí a důraz na měřitelný výsledek.",
     it_title: "Profesní dráha",
     it_1: "IT analytik se zaměřením na digitální aplikace",
     it_2: "Datový expert pro návrh a řízení datových toků",
@@ -23,15 +36,24 @@ const copy = {
     chess_2: "Mistr České republiky v šachu (2018)",
     chess_3: "Dlouhodobý fokus na strategii, disciplínu a výkon",
     contact_title: "Kontakt",
+    contact_cta_mail: "Napsat e-mail",
+    contact_cta_linkedin: "Spojit se na LinkedIn",
     link_linkedin: "LinkedIn: linkedin.com/in/svatopluk-svoboda-5ba34b83",
     link_github: "GitHub: github.com/vbs5fp29vg-maker",
     link_instagram: "Instagram: instagram.com/svatosvoboda",
     footer: "Svatopluk Svoboda | Šach a IT",
+    page_title: "Svatopluk Svoboda | IT analytik, datový expert, International Master",
+    page_description:
+      "Svatopluk Svoboda - IT analytik a datový expert se zaměřením na digitální aplikace, integrace systémů a datové toky. International Master v šachu.",
   },
   en: {
     eyebrow: "Personal Website",
     name: "Svatopluk Svoboda",
     subtitle: "Chess player, IT analyst, data expert",
+    value_prop:
+      "I help teams design and deliver digital products that are stable, measurable, and practical.",
+    cta_contact: "Contact me",
+    cta_linkedin: "LinkedIn profile",
     badge_im: "International Master",
     badge_champion: "Czech Champion 2018",
     badge_it: "Digital Systems",
@@ -42,6 +64,14 @@ const copy = {
     stat_born: "Year of Birth",
     stat_title: "Chess Title",
     stat_champion: "Czech Champion",
+    projects_title: "What I deliver",
+    proj_1_title: "Analysis and solution design",
+    proj_1_text: "Turning business needs into clear specifications, backlog, and implementation plan.",
+    proj_2_title: "Data flows and integrations",
+    proj_2_text:
+      "Designing robust integration flows between systems with focus on data quality and operational stability.",
+    proj_3_title: "Complexity management",
+    proj_3_text: "Structured decision-making in complex environments with focus on measurable outcomes.",
     it_title: "Professional Career",
     it_1: "IT analyst focused on digital applications",
     it_2: "Data expert for data-flow design and governance",
@@ -52,15 +82,29 @@ const copy = {
     chess_2: "Czech Chess Champion (2018)",
     chess_3: "Long-term focus on strategy, discipline, and performance",
     contact_title: "Contact",
+    contact_cta_mail: "Send email",
+    contact_cta_linkedin: "Connect on LinkedIn",
     link_linkedin: "LinkedIn: linkedin.com/in/svatopluk-svoboda-5ba34b83",
     link_github: "GitHub: github.com/vbs5fp29vg-maker",
     link_instagram: "Instagram: instagram.com/svatosvoboda",
     footer: "Svatopluk Svoboda | Chess & IT",
+    page_title: "Svatopluk Svoboda | IT analyst, data expert, International Master",
+    page_description:
+      "Svatopluk Svoboda - IT analyst and data expert focused on digital applications, integrations, and data flows. International Master in chess.",
   },
 };
 
 const button = document.getElementById("lang-toggle");
-let lang = "cs";
+const descriptionMeta = document.querySelector('meta[name="description"]');
+const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]');
+const twitterDescriptionMeta = document.querySelector('meta[name="twitter:description"]');
+
+let lang = localStorage.getItem("site-lang") || "cs";
+if (!copy[lang]) {
+  lang = "cs";
+}
 
 function renderLanguage() {
   document.documentElement.lang = lang;
@@ -70,11 +114,26 @@ function renderLanguage() {
       el.textContent = copy[lang][key];
     }
   });
+
+  document.title = copy[lang].page_title;
+  descriptionMeta?.setAttribute("content", copy[lang].page_description);
+  ogTitleMeta?.setAttribute("content", copy[lang].page_title);
+  ogDescriptionMeta?.setAttribute("content", copy[lang].page_description);
+  twitterTitleMeta?.setAttribute("content", copy[lang].page_title);
+  twitterDescriptionMeta?.setAttribute("content", copy[lang].page_description);
+
   button.textContent = lang === "cs" ? "EN" : "CZ";
+  button.setAttribute("aria-label", lang === "cs" ? "Switch language to English" : "Prepnout jazyk na cestinu");
 }
 
 function initReveal() {
   const elements = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -92,6 +151,7 @@ function initReveal() {
 
 button.addEventListener("click", () => {
   lang = lang === "cs" ? "en" : "cs";
+  localStorage.setItem("site-lang", lang);
   renderLanguage();
 });
 
