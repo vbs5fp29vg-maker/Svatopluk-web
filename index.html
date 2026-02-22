@@ -3,20 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Svatopluk Svoboda | Šachista & IT analytik</title>
+    <title>Svatopluk Svoboda | IT analytik, datový expert, International Master</title>
     <meta
       name="description"
-      content="Osobní web Svatopluka Svobody: mezinárodní mistr v šachu, IT analytik a datový expert."
+      content="Svatopluk Svoboda - IT analytik a datový expert se zaměřením na digitální aplikace, integrace systémů a datové toky. International Master v šachu."
     />
     <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#e8f6ff" />
     <link rel="canonical" href="https://vbs5fp29vg-maker.github.io/Svatopluk-web/" />
+    <link rel="alternate" hreflang="cs" href="https://vbs5fp29vg-maker.github.io/Svatopluk-web/" />
+    <link rel="alternate" hreflang="en" href="https://vbs5fp29vg-maker.github.io/Svatopluk-web/" />
+    <link rel="alternate" hreflang="x-default" href="https://vbs5fp29vg-maker.github.io/Svatopluk-web/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="cs_CZ" />
     <meta property="og:site_name" content="Svatopluk Svoboda" />
-    <meta property="og:title" content="Svatopluk Svoboda | Šachista & IT analytik" />
+    <meta property="og:title" content="Svatopluk Svoboda | IT analytik, datový expert" />
     <meta
       property="og:description"
-      content="Osobní web Svatopluka Svobody: mezinárodní mistr v šachu, IT analytik a datový expert."
+      content="IT analytik a datový expert se zaměřením na digitální aplikace, integrace systémů a datové toky."
     />
     <meta property="og:url" content="https://vbs5fp29vg-maker.github.io/Svatopluk-web/" />
     <meta
@@ -25,16 +30,31 @@
     />
     <meta property="og:image:alt" content="Karikatura Svatopluka Svobody" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Svatopluk Svoboda | Šachista & IT analytik" />
+    <meta name="twitter:title" content="Svatopluk Svoboda | IT analytik, datový expert" />
     <meta
       name="twitter:description"
-      content="Osobní web Svatopluka Svobody: mezinárodní mistr v šachu, IT analytik a datový expert."
+      content="IT analytik a datový expert se zaměřením na digitální aplikace, integrace systémů a datové toky."
     />
     <meta
       name="twitter:image"
       content="https://vbs5fp29vg-maker.github.io/Svatopluk-web/assets/profile-photo.jpg"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Svatopluk Svoboda",
+        "url": "https://vbs5fp29vg-maker.github.io/Svatopluk-web/",
+        "jobTitle": "IT Analyst and Data Expert",
+        "description": "IT analyst and data expert focused on digital applications, integrations and data flows. International Master in chess.",
+        "sameAs": [
+          "https://www.linkedin.com/in/svatopluk-svoboda-5ba34b83/",
+          "https://github.com/vbs5fp29vg-maker",
+          "https://www.instagram.com/svatosvoboda/"
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="hero">
@@ -44,10 +64,26 @@
           <p class="eyebrow" data-i18n="eyebrow">Osobní web</p>
           <h1 data-i18n="name">Svatopluk Svoboda</h1>
           <p class="subtitle" data-i18n="subtitle">Šachista, IT analytik, datový expert</p>
+          <p class="value-prop" data-i18n="value_prop">
+            Pomáhám týmům navrhovat a doručovat digitální produkty, které jsou stabilní, měřitelné a použitelné.
+          </p>
           <div class="badge-row">
             <span class="badge" data-i18n="badge_im">Mezinárodní mistr</span>
             <span class="badge" data-i18n="badge_champion">Mistr ČR 2018</span>
             <span class="badge" data-i18n="badge_it">Digitální systémy</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:svoboda.svato@gmail.com" data-i18n="cta_contact"
+              >Kontaktovat mě</a
+            >
+            <a
+              class="btn btn-secondary"
+              href="https://www.linkedin.com/in/svatopluk-svoboda-5ba34b83/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="cta_linkedin"
+              >LinkedIn profil</a
+            >
           </div>
         </div>
         <button id="lang-toggle" class="lang-button" type="button" aria-label="Switch language">
@@ -63,6 +99,13 @@
             <img
               class="profile-photo"
               src="assets/profile-photo.jpg"
+              srcset="assets/profile-photo-640.jpg 640w, assets/profile-photo.jpg 1024w"
+              sizes="(max-width: 760px) 92vw, 440px"
+              width="1024"
+              height="1050"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
               alt="Karikatura Svatopluka Svobody"
             />
             <figcaption data-i18n="photo_caption">Osobní fotografie</figcaption>
@@ -92,6 +135,30 @@
         </article>
       </section>
 
+      <section class="card projects-card reveal" id="projects">
+        <h2 data-i18n="projects_title">Co umím dodat</h2>
+        <div class="projects-grid">
+          <article class="project-item">
+            <h3 data-i18n="proj_1_title">Analýza a návrh řešení</h3>
+            <p data-i18n="proj_1_text">
+              Převod business požadavků do jasné specifikace, backlogu a implementačního plánu.
+            </p>
+          </article>
+          <article class="project-item">
+            <h3 data-i18n="proj_2_title">Datové toky a integrace</h3>
+            <p data-i18n="proj_2_text">
+              Návrh robustních integračních toků mezi systémy s důrazem na kvalitu dat a provozní stabilitu.
+            </p>
+          </article>
+          <article class="project-item">
+            <h3 data-i18n="proj_3_title">Řízení komplexity</h3>
+            <p data-i18n="proj_3_text">
+              Strukturované rozhodování v komplexním prostředí a důraz na měřitelný výsledek.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section class="card reveal">
         <h2 data-i18n="it_title">Profesní dráha</h2>
         <ul>
@@ -111,8 +178,21 @@
         </ul>
       </section>
 
-      <section class="card contact-card reveal">
+      <section class="card contact-card reveal" id="contact">
         <h2 data-i18n="contact_title">Kontakt</h2>
+        <div class="contact-cta-row">
+          <a class="btn btn-primary" href="mailto:svoboda.svato@gmail.com" data-i18n="contact_cta_mail"
+            >Napsat e-mail</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="https://www.linkedin.com/in/svatopluk-svoboda-5ba34b83/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="contact_cta_linkedin"
+            >Spojit se na LinkedIn</a
+          >
+        </div>
         <div class="contact-list">
           <a class="contact-item" href="mailto:svoboda.svato@gmail.com">Email: svoboda.svato@gmail.com</a>
           <a
