@@ -12,7 +12,7 @@ const copy = {
     photo_caption: "Osobní fotografie",
     about_title: "O mně",
     about_text:
-      "Narodil jsem se 7. 1. 1984. Profesně se věnuji IT analýze s přesahem do architektury a vývoje, návrhu datových integrací a práci s komplexními systémy. Jsem mezinárodní mistr v šachu a mám velkou rodinu.",
+      "Narodil jsem se 7. 1. 1984. Profesně se věnuji IT analýze s přesahem do architektury a vývoje, návrhu datových integrací a práci s komplexními systémy. Jsem mezinárodní mistr v šachu.",
     stat_born: "Rok narození",
     stat_title: "Šachový titul",
     stat_champion: "Mistr ČR",
@@ -58,7 +58,7 @@ const copy = {
     photo_caption: "Personal photo",
     about_title: "About Me",
     about_text:
-      "I was born on January 7, 1984. Professionally, I focus on IT analysis with overlap into architecture and development, data integrations, and complex systems. I am an International Master in chess and I have a big family.",
+      "I was born on January 7, 1984. Professionally, I focus on IT analysis with overlap into architecture and development, data integrations, and complex systems. I am an International Master in chess.",
     stat_born: "Year of Birth",
     stat_title: "Chess Title",
     stat_champion: "Czech Champion",

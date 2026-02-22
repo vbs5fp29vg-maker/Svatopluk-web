@@ -185,9 +185,8 @@ h1 {
 .profile-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center center;
+  max-width: 440px;
+  height: auto;
   border-radius: 16px;
   border: 1px solid var(--line);
   box-shadow: 0 18px 30px rgba(22, 124, 192, 0.24);
