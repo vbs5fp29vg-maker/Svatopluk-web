@@ -2,18 +2,17 @@ const copy = {
   cs: {
     eyebrow: "Osobní web",
     name: "Svatopluk Svoboda",
-    subtitle: "Šachista, IT analytik, datový expert",
+    subtitle: "IT analytik, datové integrace, šachista",
     value_prop:
       "Pomáhám týmům navrhovat a doručovat digitální produkty, které jsou stabilní, měřitelné a použitelné.",
-    cta_contact: "Kontaktovat mě",
-    cta_linkedin: "LinkedIn profil",
-    badge_im: "Mezinárodní mistr",
+    badge_it: "IT analýza a architektura",
+    badge_data: "Datové integrace",
+    badge_im: "Mezinárodní mistr v šachu",
     badge_champion: "Mistr ČR 2018",
-    badge_it: "Digitální systémy",
     photo_caption: "Osobní fotografie",
     about_title: "O mně",
     about_text:
-      "Narodil jsem se 7. 1. 1984, jsem mezinárodní mistr v šachu a věnuji se IT analytice, datům, digitálním aplikacím, integracím a složitým systémům. Mám velkou rodinu.",
+      "Narodil jsem se 7. 1. 1984. Profesně se věnuji IT analýze s přesahem do architektury a vývoje, návrhu datových integrací a práci s komplexními systémy. Jsem mezinárodní mistr v šachu a mám velkou rodinu.",
     stat_born: "Rok narození",
     stat_title: "Šachový titul",
     stat_champion: "Mistr ČR",
@@ -42,25 +41,24 @@ const copy = {
     link_github: "GitHub: github.com/vbs5fp29vg-maker",
     link_instagram: "Instagram: instagram.com/svatosvoboda",
     footer: "Svatopluk Svoboda | Šach a IT",
-    page_title: "Svatopluk Svoboda | IT analytik, datový expert, International Master",
+    page_title: "Svatopluk Svoboda | IT analytik, integrace, šach",
     page_description:
-      "Svatopluk Svoboda - IT analytik a datový expert se zaměřením na digitální aplikace, integrace systémů a datové toky. International Master v šachu.",
+      "Svatopluk Svoboda - IT analytik s přesahem do architektury a vývoje, specializace na datové integrace a International Master v šachu.",
   },
   en: {
     eyebrow: "Personal Website",
     name: "Svatopluk Svoboda",
-    subtitle: "Chess player, IT analyst, data expert",
+    subtitle: "IT analyst, data integrations, chess player",
     value_prop:
       "I help teams design and deliver digital products that are stable, measurable, and practical.",
-    cta_contact: "Contact me",
-    cta_linkedin: "LinkedIn profile",
-    badge_im: "International Master",
+    badge_it: "IT analysis and architecture",
+    badge_data: "Data integrations",
+    badge_im: "International Master in chess",
     badge_champion: "Czech Champion 2018",
-    badge_it: "Digital Systems",
     photo_caption: "Personal photo",
     about_title: "About Me",
     about_text:
-      "I was born on January 7, 1984. I am an International Master in chess and I focus on IT analysis, data, digital applications, integrations, and complex systems. I have a big family.",
+      "I was born on January 7, 1984. Professionally, I focus on IT analysis with overlap into architecture and development, data integrations, and complex systems. I am an International Master in chess and I have a big family.",
     stat_born: "Year of Birth",
     stat_title: "Chess Title",
     stat_champion: "Czech Champion",
@@ -88,9 +86,9 @@ const copy = {
     link_github: "GitHub: github.com/vbs5fp29vg-maker",
     link_instagram: "Instagram: instagram.com/svatosvoboda",
     footer: "Svatopluk Svoboda | Chess & IT",
-    page_title: "Svatopluk Svoboda | IT analyst, data expert, International Master",
+    page_title: "Svatopluk Svoboda | IT analyst, integrations, chess",
     page_description:
-      "Svatopluk Svoboda - IT analyst and data expert focused on digital applications, integrations, and data flows. International Master in chess.",
+      "Svatopluk Svoboda - IT analyst with overlap into architecture and development, focused on data integrations and International Master in chess.",
   },
 };
 
