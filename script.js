@@ -3,14 +3,15 @@
    ============================================================ */
 const copy = {
   cs: {
-    eyebrow: "Šach × data × IT",
+    eyebrow: "Digitální řešení × data × AI",
     name: "Svatopluk Svoboda",
-    subtitle: "IT analytik a mezinárodní mistr v šachu",
+    subtitle: "Navrhuju digitální řešení — analýza, architektura, datové integrace, AI",
     value_prop:
-      "Na šachovnici i v datech dělám totéž: hledám nejlepší tah ve složité pozici. Pomáhám týmům navrhovat stabilní datové integrace a doručovat digitální produkty, které fungují.",
-    badge_elo: "FIDE ELO 2344",
-    badge_champion: "Mistr ČR 2018",
+      "Pohybuju se na pomezí byznysu a technologií: od analýzy a návrhu řešení přes architekturu a datové toky mezi systémy až po vlastní AI nástroje. A když zrovna nejde o data, hledám nejlepší tahy na šachovnici — jsem mezinárodní mistr.",
+    badge_it: "Analýza & architektura",
     badge_data: "Datové integrace & CDP",
+    badge_ai: "AI nástroje",
+    badge_chess: "IM v šachu · Mistr ČR 2018",
     hero_cta_mail: "Napsat e-mail",
     hero_cta_puzzle: "Vyřeš můj mat",
     photo_caption: "Osobní fotografie",
@@ -84,22 +85,22 @@ const copy = {
     contact_cta_mail: "Napsat e-mail",
     contact_cta_linkedin: "Spojit se na LinkedIn",
     footer: "Svatopluk Svoboda · Šach × IT · aktualizováno v červenci 2026",
-    page_title:
-      "Svatopluk Svoboda | IT analytik, datové integrace, mezinárodní mistr v šachu",
+    page_title: "Svatopluk Svoboda | Digitální řešení, datové integrace, AI",
     page_description:
-      "Svatopluk Svoboda - IT analytik se specializací na datové integrace a CDP. Mezinárodní mistr v šachu a mistr České republiky 2018 (FIDE ELO 2344).",
+      "Svatopluk Svoboda - návrh digitálních řešení: IT analýza, architektura, datové integrace a CDP, AI nástroje. Mimo IT mezinárodní mistr v šachu a mistr ČR 2018.",
     theme_label_dark: "Přepnout na tmavý režim",
     theme_label_light: "Přepnout na světlý režim",
   },
   en: {
-    eyebrow: "Chess × data × IT",
+    eyebrow: "Digital solutions × data × AI",
     name: "Svatopluk Svoboda",
-    subtitle: "IT analyst and International Master in chess",
+    subtitle: "I design digital solutions — analysis, architecture, data integrations, AI",
     value_prop:
-      "On the chessboard and in data alike, I do the same thing: find the best move in a complex position. I help teams design stable data integrations and ship digital products that work.",
-    badge_elo: "FIDE ELO 2344",
-    badge_champion: "Czech Champion 2018",
+      "I work at the intersection of business and technology: from analysis and solution design through architecture and data flows between systems to building my own AI tools. And when it's not about data, I hunt for the best moves on the chessboard — I'm an International Master.",
+    badge_it: "Analysis & architecture",
     badge_data: "Data integrations & CDP",
+    badge_ai: "AI tools",
+    badge_chess: "Chess IM · Czech Champion 2018",
     hero_cta_mail: "Send email",
     hero_cta_puzzle: "Solve my mate",
     photo_caption: "Personal photo",
@@ -172,10 +173,9 @@ const copy = {
     contact_cta_mail: "Send email",
     contact_cta_linkedin: "Connect on LinkedIn",
     footer: "Svatopluk Svoboda · Chess × IT · updated July 2026",
-    page_title:
-      "Svatopluk Svoboda | IT analyst, data integrations, International Master in chess",
+    page_title: "Svatopluk Svoboda | Digital solutions, data integrations, AI",
     page_description:
-      "Svatopluk Svoboda - IT analyst focused on data integrations and CDP. International Master in chess and 2018 Czech Champion (FIDE ELO 2344).",
+      "Svatopluk Svoboda - designer of digital solutions: IT analysis, architecture, data integrations and CDP, AI tooling. Outside IT an International Master in chess and 2018 Czech Champion.",
     theme_label_dark: "Switch to dark mode",
     theme_label_light: "Switch to light mode",
   },
@@ -280,10 +280,10 @@ function initReveal() {
    White: Kc8, Ra1, Pb6 · Black: Ka8, Bb8, Pa7, Pb7
    Solution: 1.Ra6! (…bxa6 2.b7# / …B-any 2.Rxa7#)
    ============================================================ */
-const PIECE_GLYPHS = {
-  wk: "♔", wq: "♕", wr: "♖", wb: "♗", wn: "♘", wp: "♙",
-  bk: "♚", bq: "♛", br: "♜", bb: "♝", bn: "♞", bp: "♟",
-};
+/* piece images: cburnett set (Colin M.L. Burnett, GPLv2+/BSD, via lichess) */
+function pieceSrc(piece) {
+  return "assets/pieces/" + piece[0] + piece[1].toUpperCase() + ".svg";
+}
 
 const START_POSITION = {
   a8: "bk", b8: "bb", c8: "wk",
@@ -314,6 +314,8 @@ const puzzle = {
         btn.type = "button";
         btn.className = "square" + ((f + rank) % 2 === 1 ? " dark" : "");
         btn.dataset.square = sq;
+        if (f === 0) btn.dataset.rlabel = String(rank);
+        if (rank === 1) btn.dataset.flabel = FILES[f];
         btn.addEventListener("click", () => this.onSquareClick(sq));
         this.boardEl.appendChild(btn);
       }
@@ -342,9 +344,12 @@ const puzzle = {
     this.boardEl.querySelectorAll(".square").forEach((btn) => {
       const sq = btn.dataset.square;
       const piece = this.position[sq];
-      btn.innerHTML = piece
-        ? `<span class="${piece[0] === "w" ? "wpiece" : "bpiece"}">${PIECE_GLYPHS[piece]}</span>`
+      let html = piece
+        ? `<img class="piece" src="${pieceSrc(piece)}" alt="" draggable="false" />`
         : "";
+      if (btn.dataset.rlabel) html += `<span class="coord coord-r">${btn.dataset.rlabel}</span>`;
+      if (btn.dataset.flabel) html += `<span class="coord coord-f">${btn.dataset.flabel}</span>`;
+      btn.innerHTML = html;
       btn.classList.toggle("selected", this.selected === sq);
       btn.classList.toggle("last-move", Boolean(highlights.lastMove?.includes(sq)));
       btn.classList.toggle("mate", Boolean(highlights.mate?.includes(sq)));

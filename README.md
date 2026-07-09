@@ -8,6 +8,7 @@ Nasazeno na GitHub Pages: https://vbs5fp29vg-maker.github.io/Svatopluk-web/
 - Dvojjazyčný obsah (CS/EN) — přepínač vpravo nahoře, volba se pamatuje
 - Světlý/tmavý režim — řídí se systémem, ručně přepnutelný, volba se pamatuje
 - Interaktivní šachová úloha (Morphyho mat druhým tahem) — čistý vanilla JS, bez závislostí
+- Figury: sada „cburnett" (Colin M. L. Burnett, licence GPLv2+/BSD, převzato z lichess)
 - Sekce: O mně · Statistiky (FIDE) · Příběh titulu MČR 2018 · Šachový profil · IT · Kontakt
 
 ## Spuštění lokálně
