@@ -176,7 +176,7 @@ h1 {
 
 .intro-layout { display: grid; gap: 1rem; }
 
-.profile-figure { margin: 0; width: 100%; max-width: 380px; }
+.profile-figure { margin: 0; width: 100%; max-width: 320px; }
 
 .profile-photo {
   display: block;
@@ -358,7 +358,7 @@ ul.plain li + li { margin-top: 0.5rem; }
 @media (min-width: 760px) {
   .main-layout { grid-template-columns: 1fr 1fr; }
   .intro, .stats, .puzzle-card, .projects-card, .contact-card { grid-column: 1 / -1; }
-  .intro-layout { grid-template-columns: minmax(240px, 380px) 1fr; align-items: center; }
+  .intro-layout { grid-template-columns: minmax(220px, 320px) 1fr; align-items: center; }
   .stats { grid-template-columns: repeat(4, 1fr); }
   .projects-grid { grid-template-columns: repeat(4, 1fr); }
   .puzzle-layout { grid-template-columns: minmax(280px, 420px) 1fr; }
