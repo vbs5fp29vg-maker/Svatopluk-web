@@ -210,42 +210,13 @@ p { margin: 0; line-height: 1.5; }
 .stat-value { margin: 0; font-size: 2rem; font-weight: 700; color: var(--accent-strong); font-family: "Fraunces", serif; }
 .stat-label { margin-top: 0.15rem; color: var(--muted); font-size: 0.9rem; }
 
-/* ---------- chess profile ---------- */
-.chess-grid { display: grid; gap: 0.75rem; }
-
-.chess-item {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface-soft);
-  padding: 0.9rem;
-}
-
-.chess-item p { margin-top: 0.45rem; color: var(--muted); }
-
-.chip-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
-
-.chip {
-  font-size: 0.82rem;
-  font-weight: 600;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: 999px;
-  padding: 0.22rem 0.6rem;
-  color: var(--text);
-}
-
-.link-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
-
-.text-link { color: var(--accent-strong); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--accent); }
-.text-link:hover { border-bottom-style: solid; }
-
 /* ---------- puzzle ---------- */
 .puzzle-layout { display: grid; gap: 1rem; align-items: start; }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
   width: min(420px, 100%);
   aspect-ratio: 1;
   border: 6px solid var(--board-dark);
@@ -282,6 +253,8 @@ p { margin: 0; line-height: 1.5; }
 .square.dark { background: var(--board-dark); }
 
 .square .piece {
+  position: absolute;
+  inset: 6%;
   width: 88%;
   height: 88%;
   pointer-events: none;
@@ -387,7 +360,6 @@ ul.plain li + li { margin-top: 0.5rem; }
   .intro, .stats, .puzzle-card, .projects-card, .contact-card { grid-column: 1 / -1; }
   .intro-layout { grid-template-columns: minmax(260px, 440px) 1fr; align-items: center; }
   .stats { grid-template-columns: repeat(4, 1fr); }
-  .chess-grid { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: repeat(4, 1fr); }
   .puzzle-layout { grid-template-columns: minmax(280px, 420px) 1fr; }
 }
