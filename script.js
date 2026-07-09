@@ -22,18 +22,6 @@ const copy = {
     stat_title: "Mezinárodní mistr FIDE",
     stat_champion: "Mistr ČR 2018 · Ostrava",
     stat_blitz: "FIDE ELO (blesk)",
-    story_title: "Příběh titulu: MČR 2018, Ostrava",
-    story_1_round: "Kola 1–3.",
-    story_1_text:
-      "Rozpačitý start: 1,5 bodu ze tří partií. Jako 18. nasazený hráč turnaje jsem byl mimo pozornost favoritů.",
-    story_2_round: "Kola 4–8.",
-    story_2_text:
-      "Pět výher v řadě — série zakončená vítězstvím bílými figurami nad Tomášem Krausem v předposledním kole.",
-    story_3_round: "Kolo 9.",
-    story_3_text:
-      "Rychlá remíza černými s velmistrem Kislinským. Jako jediný v poli jsem uhrál 7 bodů z 9 — a s nimi titul mistra České republiky.",
-    story_quote:
-      "„Po třetím kole, kdy měl na kontě 1,5 bodu, by si na jeho triumf nevsadil asi nikdo.“",
     chess_title: "Šachový profil",
     chess_white_title: "Bílými figurami",
     chess_white_text: "Nejčastější zbraně podle databáze partií:",
@@ -111,18 +99,6 @@ const copy = {
     stat_title: "FIDE International Master",
     stat_champion: "Czech Champion 2018 · Ostrava",
     stat_blitz: "FIDE ELO (blitz)",
-    story_title: "The Title Run: Czech Championship 2018, Ostrava",
-    story_1_round: "Rounds 1–3.",
-    story_1_text:
-      "A shaky start: 1.5 points from three games. Seeded 18th, I was nowhere near the favourites' radar.",
-    story_2_round: "Rounds 4–8.",
-    story_2_text:
-      "Five wins in a row — a streak capped by a win with the white pieces over Tomáš Kraus in the penultimate round.",
-    story_3_round: "Round 9.",
-    story_3_text:
-      "A quick draw with black against GM Kislinsky. The only player in the field with 7/9 — and with it, the title of Czech Champion.",
-    story_quote:
-      "“After round three, with 1.5 points on his scoreboard, probably nobody would have bet on his triumph.”",
     chess_title: "Chess Profile",
     chess_white_title: "With the white pieces",
     chess_white_text: "Most frequent weapons according to the games database:",
