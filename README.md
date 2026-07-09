@@ -1,18 +1,31 @@
-# Personal website
+# Svatopluk-web — osobní web
 
-## Run locally
+Osobní web Svatopluka Svobody: IT analytik a mezinárodní mistr v šachu, mistr ČR 2018.
+Nasazeno na GitHub Pages: https://vbs5fp29vg-maker.github.io/Svatopluk-web/
 
-From project root:
+## Co web umí
+
+- Dvojjazyčný obsah (CS/EN) — přepínač vpravo nahoře, volba se pamatuje
+- Světlý/tmavý režim — řídí se systémem, ručně přepnutelný, volba se pamatuje
+- Interaktivní šachová úloha (Morphyho mat druhým tahem) — čistý vanilla JS, bez závislostí
+- Sekce: O mně · Statistiky (FIDE) · Příběh titulu MČR 2018 · Šachový profil · IT · Kontakt
+
+## Spuštění lokálně
 
 ```bash
-cd /Users/svatopluksvoboda/Documents/Visual_Studio/MyFirstAPI/web/personal-site
+cd Svatopluk-web
 python3 -m http.server 8080
 ```
 
-Then open:
+Pak otevřít http://localhost:8080
 
-- http://localhost:8080
+## Aktualizace dat
 
-## Edit social links
+- FIDE ratingy jsou v `index.html` (statistiky, badge) a `script.js` (překlady) — aktuální
+  hodnoty na https://ratings.fide.com/profile/14903563
+- Poznámka „Ratingy k …" je u šachového profilu (klíč `chess_note`)
 
-In `index.html`, replace `href="#"` for LinkedIn/GitHub/Instagram with your real profile URLs.
+## Nasazení
+
+Repo `vbs5fp29vg-maker/Svatopluk-web`, větev `main`, GitHub Pages z kořene.
+Stačí commitnout a pushnout — Pages se přegenerují automaticky.
