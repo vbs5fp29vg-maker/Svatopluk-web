@@ -31,7 +31,7 @@ const copy = {
     puzzle_your_move: "Bílý na tahu — najdi ten pravý.",
     puzzle_wrong: "Tenhle tah to není. Zkus to znovu!",
     puzzle_wrong_check:
-      "Šach ano, ale mat z toho nebude — král uteče. Zkus tišší tah.",
+      "Šach ano, ale mat z toho nebude — střelec věž prostě sebere (…Sxa7). Zkus tišší tah.",
     puzzle_good: "Přesně tak! Černý bere věž… a teď mat.",
     puzzle_mate: "Mat! ♛ Gratuluju — vyřešil(a) jsi Morphyho dvoutahovku.",
     puzzle_pick_white: "Vyber bílou figuru.",
@@ -86,7 +86,7 @@ const copy = {
     puzzle_solve: "Show solution",
     puzzle_your_move: "White to move — find the right one.",
     puzzle_wrong: "Not this move. Try again!",
-    puzzle_wrong_check: "Check, yes — but no mate: the king escapes. Try a quieter move.",
+    puzzle_wrong_check: "Check, yes — but no mate: the bishop simply takes the rook (…Bxa7). Try a quieter move.",
     puzzle_good: "Exactly! Black takes the rook… now deliver mate.",
     puzzle_mate: "Checkmate! ♛ Congratulations — you solved Morphy's two-mover.",
     puzzle_pick_white: "Pick a white piece.",
@@ -358,7 +358,7 @@ const puzzle = {
           this.locked = false;
         }, 700);
       } else if (from === "a1" && sq === "a7") {
-        // Rxa7+?? Kxa7 — tempting check, but no mate
+        // Rxa7+?? Bxa7 — tempting check, but no mate (Kxa7 is illegal: b6 pawn guards a7)
         this.setStatus("puzzle_wrong_check", "bad");
         this.wrong();
       } else {
